@@ -8,6 +8,7 @@
 - 提供不同输出格式（JSON、文件保存、二进制等）
 - 支持向量压缩以减少数据大小
 - 可作为Python模块导入到其他项目中使用
+- 可打包为独立的可执行文件
 
 ## 安装依赖
 
@@ -77,6 +78,32 @@ vector = extract_vector_from_image("path/to/image.jpg", model_name="resnet50", c
 
 # 使用向量进行后续处理
 print(vector.shape)
+```
+
+## 打包为可执行文件
+
+本项目可以打包为独立的可执行文件，无需安装Python和依赖库即可运行。
+
+### 打包步骤
+
+使用提供的Python打包脚本:
+
+```bash
+# 交互式打包（带有更多选项）
+python package.py
+
+# 或使用简化的打包脚本（自动完成所有步骤）
+python package_simple.py
+```
+
+打包完成后，可执行文件会生成在`dist`目录下。
+
+### 使用可执行文件
+
+打包后的可执行文件与原始Python脚本有相同的命令行参数:
+
+```bash
+vector_extractor.exe --image path/to/image.jpg --model resnet50 --format json
 ```
 
 ## 许可证
